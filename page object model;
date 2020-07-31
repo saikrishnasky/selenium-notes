@@ -1,0 +1,8 @@
+organizing the page elements 
+
+in page object model we devided th code into 2 parts one is 1)identification2)operational
+driver.findelements(By.id("")).sendKeys();
+.....identifying...............................|...operational....| 
+so we create the 2 .java files one is for web element finding another is for main method operations
+
+have a comlete detaila about pageFActory

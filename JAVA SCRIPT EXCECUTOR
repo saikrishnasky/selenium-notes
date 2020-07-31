@@ -1,0 +1,44 @@
+JAVA SCRIPT EXCECUTOR
+JavaScriptExecutor
+ 
+by using this we perform ScrollBar actions
+
+JavaScriptexecutor js=(javaScriptexecutor)driver;
+js.executeScript(script(),argument());
+
+most of the time arguments is just empty
+js.executeScript("window.scrollBy(0,1000"," ");
+
+not only this we can perform actions popup,sendkeys ,slick operations using this
+1)to scroll down the web page by pixel
+js.executeScript("window.scrollBy(0,1000"," ");
+2)to scroll down the web page by the visibility of the elemnet
+webelemnt flag=driver.findelemnt(by.xpath(" "));
+js.executScript("arguments[0].Scrollintoview();"flag);
+3)to scroll down the web page at the bottom of the page
+js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+
+thoery---
+javascriptexcecutor is an interface which provides mechanisum to  execute javascript through selenium webdriver
+ Actions that can performed by the javascriptexcecutor
+1)Flashing an element
+2)Drawing a boarder around the element
+3)capture title of the page
+4)clicck on some element5)generate alert info
+6)refreshin page 7)scrolling page
+-------------------------------------------------------------------------------
+AShot api
+
+this api is used for takeing the screen shots and comparing the images
+by using this upt we can capture the specific webelements like logos,highlighted images
+WebElement logimageele=driver.findElement(By.xpath("//*[@id=\"divLogo\"]/img"));
+		Screenshot logoimage=new AShot().takeScreenshot(driver, logimageele);
+		ImageIO.write(logoimage.getImage(),"png", new File("F:\\Screenshots\\ornagelogo.png"));
+		File f=new File("F:\\Screenshots\\ornagelogo.png");
+		if(f.exists())
+		{
+			System.out.println(" image stored");
+		}
+		else {
+			System.out.println("image not stored");
+		}

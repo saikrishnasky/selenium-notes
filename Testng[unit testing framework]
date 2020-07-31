@@ -1,0 +1,80 @@
+Testng[unit testing framework]
+  testngAssertions
+-----------------------
+Asserts are used to verify and decide weather test has failed or passed.we will consider a successful test only if it is completed the test run without throwing any exception.
+
+1.Hard assertion
+2.soft Assertion
+.in hard Assertion if the test failed any condiotin it will stop exceution there it self
+in Soft Assertionif the condition fails it will continue the remaitin excecution
+
+HArd Assertions:
+               Assert.assertTrue();
+               Assert.asserFalse();
+               Assert.assertEquals();
+SOft Assertionn
+           SoftAssert sa=new SoftAssert();
+        sa.assertTrue(condition);
+        sa.assertAll();
+        sa.assertEquals();
+   soft assetion has drwaback,if we declerws a softassert globally,there are two methods,same object bothh methods are using so in this case even though the first method passes true or false the secound method must fails,to overcome that wee use each object to each method
+purposes of testng
+desings test casses in a systamatic way
+html reports
+diff annotations
+priorities
+grouping
+dataprovider
+dependency casess
+
+TestNG annotations
+@beforeSuite
+@beforeTest       note:@before performs precondtions
+@beforeClass                
+@beforeMethod
+@Test              //performs actual Testcase
+@Aftermethod
+@AfterClass
+@AfterTest      note:@After performs postcondtions
+@AfterSuite
+
+
+excecuting multiple test cases as a suite is called as BATCH testing,..xml files uses for batch testing .
+in xml file the syntax be like
+<suite>
+      <test>
+            <classes>
+                       <class   name=package.classanamewithout.javaextension>
+                              <methods>
+                                   <inclede name="methodname"
+                                   <include name="methodname"
+                               <methods>
+                      </class>
+              </classes>
+          </test>
+<suite>
+                    we can also use the <exclude> tag for to keep away a method from excecution
+
+here we are running .java files throug xmls
+
+what if multiple xml files want to run at a momment.
+to run multiple xml file we use master.xml
+create a xml file with name master.xml. its syntax will be like
+< Suite>
+       <Suite-files>
+                 <Suite-file   path="path of the xml file "   />
+                 <Suite-file   path="path of the xml file "   /> 
+                 <Suite-file   path="path of the xml file  "  />
+          <Suite-files>
+  <Suite>
+------------------------------------------
+Listeners
+normally whenever the meod of a testcases succesed or failed there is automatically report generetes,it just have the info about method passes orfailed.if you want to do some actions after method success failed or skipped like adding log files,and taking screenshot  we need have listeners.Listeners ore classes of tetng.whwnever we need  to add the lgs or any other operations after a method excecution .after writing listeners we need to add that testng.xml file,the it wil works,there are different types of listners
+@Test(enabled=false) --this tag before the any method means testng ignorethe method,this is thhe oe way of the excluding a method,the other way is using xml file add an exclude tag to the method
+1)ITestListener(testlisteneradapter)
+    methods 
+       onTestStart()
+       onTestSuccess()
+       onTestFailure()
+       onTestSkipped()
+    

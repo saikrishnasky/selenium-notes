@@ -1,0 +1,12 @@
+study purpose not practiced at
+-------------------------------------------
+Robot class
+
+in automation we can performkeyboard actions ,alert actions ,mouse actions wirh sepecfic classes ,by using ROBOT class we can perform all these
+
+Selenium webdriver cannot handle the os pop-ups,we use them there
+Robot class can help the in upload and dounload of files using webdriver
+it cqn be easily integrated with automation frameworks like data-driven ,keyboad-driven,hybrid
+
+Robot robot=new robot();
+robot.Keypress(keyEvent.VK_down);-----for down key

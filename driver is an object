@@ -1,0 +1,78 @@
+driver is an object
+
+webdriver commands------
+driver.windowhandles()-return id/key valuue of a specific browser/window
+------------------------------
+get commands
+gettext();
+gettitle()
+getcuurenturl()
+-----------------------
+wait commands
+implicit wait ,explicit wait,fluent wait
+---------------------------
+Conditional commands
+isdisplayed();Verifies whether this element displayed or not?
+isenabled() Is the element currently enabled or not ? this will generally return true for everything but for disabled input elements returns false.
+isselected()--
+for clear explanation--https://www.softwaretestinghelp.com/webdriver-commands-selenium-tutorial-14/
+-------------------------------------
+Browser commands
+close()- will close specific browser
+quit()-will close all existing browsers
+-------------------------------------
+Navigation commands
+navigate().forward();
+navigate().back()
+navigate().to()
+navigate().refresh();
+------------------
+Switching commands
+SwitchTo().frame();
+SwitchTo().alert();
+SwitchTo().defaultContent();
+SwitchTo().window();
+------------------------------
+pop ups
+
+we have 3 types of popups
+1).file uplooad type popup(at the time of inspect the  upload button it has the file attribute you can directly give the file pathe including file name(type=file)
+2).confirmation popup/javascriptpopups/alerts (alert(dimiss,accept)
+3).window type popup /advvertisment popup(get windowhandles )
+------------------------------------------------------
+Actions 
+Actions act=new Actions(driver)
+we can perform mouse moments using this c;ass
+1)dragAnddrop
+2)contextclick(rightclick)
+3)double click
+4)slider 5)resizeble
+For drag anf drop we need to perform 3 actions in action class methods
+1.clickandhold();
+2.movetoelement();
+3.release();
+syntax :- act.clickandhold(src).movetoelement(target).release().build().perform();
+                              or else
+short cut for this action 
+act.draganddrop(src,target).bulid.perform();
+---------------------------------------------------------------------
+alert
+syntax:-
+driver.switchTo().Alert();
+its options are
+driver.switchTo().Alert().gettext();
+driver.switchTo().Alert().sendkeys('text');
+driver.switchTo().Alert().Accept();
+driver.switchTo().Alert().dismiss();
+why weare not able to click the ok button or camcel button,because the alert poppup doesnt have the properties for the ok and cancel button
+-------------------------------------------------------------
+cookies are a collection of a data that stored by the browser it self 
+1)cookies returns it result as a cookie
+
+driver.manage().getcookies().......................to get all cokies
+driver.manage().getcookienamed(args)...specific cookie with a name
+driver.manage().addcookie(args);....add a cookie
+driver.manage.deletecookie(args);...........delete specific cookie
+driver.manage().deletecookieNamed(arfs)--delete a specific cokie with named one
+driver.manage().deleteAll();--delete all cookies
+---------------------------------------------------------------
